@@ -7,4 +7,8 @@ class UserRepository(
     val remote: RemoteDataSource,
     val local: LocalDataSource
 ) {
+
+    suspend fun login(username: String, password: String): String? {
+        return remote.login(username, password)
+    }
 }
